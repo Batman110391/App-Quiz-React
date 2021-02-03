@@ -1,0 +1,150 @@
+.steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+span {
+  display: flex;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: #f5f1f1e3;
+  font-size: 12px;
+  font-weight: 700;
+  align-items: center;
+  justify-content: center;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.486);
+  width: 98%;
+  z-index: -1;
+}
+
+span.complete {
+  /* background-color: green; */
+}
+
+span.complete::before {
+  content: "✔";
+  font-size: 33px;
+  color: #007eff;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+.helps {
+  display: flex;
+  height: 55px;
+  justify-content: center;
+}
+
+.help {
+  cursor: pointer;
+  position: relative;
+}
+
+.help::before {
+  content: "⍰";
+  color: #00000096;
+  font-size: 35px;
+  transition: all 0.3s ease-in-out;
+}
+
+.pop-up {
+  background-color: #f5f1f1e8;
+  opacity: 1%;
+  width: 250px;
+  height: 80px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 31px;
+  right: 50%;
+  transform: translateX(50%);
+  z-index: -1;
+  transition: all 0.3s ease-in;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.help:hover::before {
+  color: #007eff;
+  font-size: 37px;
+}
+
+.help:hover .pop-up {
+  opacity: 100%;
+  z-index: 1;
+}
+
+.change,
+.cut {
+  width: 120px;
+  text-align: center;
+  position: relative;
+}
+
+.change::before {
+  content: "↻";
+  font-size: 40px;
+}
+
+.cut::before {
+  content: "✃";
+  font-size: 40px;
+}
+
+.change:hover::before,
+.cut:hover::before {
+  font-size: 45px;
+}
+
+.change__question,
+.cut__question {
+  font-size: 12px;
+  margin-top: -6px;
+  opacity: 1%;
+  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.change:hover .change__question,
+.cut:hover .cut__question {
+  opacity: 100%;
+}
+
+.closeHelpCut {
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 999;
+}
+
+.closeHelpChange {
+  display: none;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 50%;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 999;
+}
+
+.closeHelpCut::before,
+.closeHelpChange::before {
+  content: "✘";
+  color: red;
+  font-size: 45px;
+}

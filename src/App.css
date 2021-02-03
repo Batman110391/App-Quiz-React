@@ -1,0 +1,12 @@
+.App {
+  border: 1px solid black;
+  width: 500px;
+  height: 675px;
+  margin: auto;
+  margin-top: 50px;
+  background: linear-gradient(
+    45deg,
+    rgba(191, 247, 158, 0.3),
+    rgba(33, 150, 243, 0.3)
+  );
+}
